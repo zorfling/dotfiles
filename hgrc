@@ -47,33 +47,6 @@ qseries.applied = green bold
 qseries.unapplied = blue bold
 qseries.missing = red bold
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [auth]
 ss.prefix = hg.its.uq.edu.au
 ss.username = uqccolbo
