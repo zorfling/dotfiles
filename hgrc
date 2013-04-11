@@ -1,0 +1,86 @@
+[ui]
+username = Chris Colborne <c.colborne@its.uq.edu.au>
+verbose = True
+merge = vimdiff
+commitsubrepos = false
+
+[merge-tools]
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other -c "wincmd J"
+
+[diff]
+git = 1
+
+
+[extensions]
+graphlog =
+color =
+pager =
+
+mq =
+rebase =
+
+patchbomb =
+convert =
+
+hgshelve=/home/ccolborn/hgshelve/hgshelve.py
+prompt=/home/ccolborn/hg-prompt/prompt.py
+transplant=
+[pager]
+pager = LESS='FSRX' less
+ignore = version,help,update,serve,record
+
+
+[smtp]
+host = smtp.uq.edu.au
+
+
+[color]
+status.modified = magenta bold
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold
+status.unknown = blue bold
+status.ignored = black bold
+
+qseries.applied = green bold
+qseries.unapplied = blue bold
+qseries.missing = red bold
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[auth]
+ss.prefix = hg.its.uq.edu.au
+ss.username = uqccolbo
+ss.schemes = http https
+
+[trusted]
+groups = wdu
+
+[web]
+cacerts = /etc/pki/tls/certs/ca-bundle.crt
