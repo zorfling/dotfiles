@@ -1,0 +1,9 @@
+data/setup.py.i
+data/mercurial_keyring.py.i
+data/README.txt.i
+data/debug/hg.py.i
+data/.hgtags.i
+data/LICENSE.txt.i
+data/.hgignore.i
+data/.bitbucket.url.i
+data/MANIFEST.in.i

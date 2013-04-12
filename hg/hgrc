@@ -23,8 +23,10 @@ rebase =
 patchbomb =
 convert =
 
-hgshelve=/home/ccolborn/hgshelve/hgshelve.py
-prompt=/home/ccolborn/hg-prompt/prompt.py
+hgshelve=~/dotfiles/hg/hgshelve/hgshelve.py
+mercurial_keyring=~/dotfiles/hg/mercurial_keyring/mercurial_keyring.py
+prompt=~/dotfiles/hg/hg-prompt/prompt.py
+
 transplant=
 [pager]
 pager = LESS='FSRX' less
