@@ -88,4 +88,6 @@ set expandtab
 map [ :bprev<CR>
 map ] :bnext<CR>
 
-
+noremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
