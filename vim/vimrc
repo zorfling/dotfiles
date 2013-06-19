@@ -90,11 +90,13 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-map [ :bprev<CR>
-map ] :bnext<CR>
-
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 noremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+let s:uname = system("echo -n \"$(uname)\"")
+if !v:shell_error && s:uname == "Linux"
+    let g:NERDTreeDirArrows=0
+endif
