@@ -1,1 +1,6 @@
-vim/bundle
+*.swp
+*~
+.project
+.DS_STORE
+.idea
+*.pyc
