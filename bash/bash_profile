@@ -20,4 +20,3 @@ function wtitle {
 
 wtitle PuTTY
 export PATH=$PATH:/opt/ss-arcanist/arcanist/bin/:/opt/node/bin/
-export PATH=$PATH:/opt/ss-arcanist/arcanist/bin/:/opt/node/bin/
