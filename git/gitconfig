@@ -1,0 +1,13 @@
+[user]
+	name = Chris Colborne
+	email = zorfling@gmail.com
+[core]
+	quotepath = false
+[color]
+	ui = true
+
+[alias]
+co = checkout
+ci = commit
+rb = rebase
+st = status
