@@ -9,3 +9,5 @@ link:
 	cd ../ && ln -sf dotfiles/hg/hgrc .hgrc
 	cd ../ && ln -sf dotfiles/gemrc .gemrc
 
+	git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	vim +BundleInstall +qall
