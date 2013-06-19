@@ -93,3 +93,7 @@ map [ :bprev<CR>
 map ] :bnext<CR>
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+
+noremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
