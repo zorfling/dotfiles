@@ -26,6 +26,10 @@ Bundle 'html5.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'beyondwords/vim-twig'
 Bundle 'rodjek/vim-puppet'
+Bundle 'estin/htmljinja'
+Bundle 'rails.vim'
+
+au BufRead,BufNewFile *.twig set filetype=htmljinja
 
 syntax on
 filetype plugin indent on     " required!
@@ -87,6 +91,8 @@ set expandtab
 
 map [ :bprev<CR>
 map ] :bnext<CR>
+
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 noremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
