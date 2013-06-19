@@ -19,6 +19,7 @@ Bundle 'ervandew/supertab'
 Bundle 'commentary.vim'
 Bundle 'delimitMate.vim'
 Bundle 'AutoTag'
+Bundle 'EasyMotion'
 
 " Languages and frameworks
 Bundle 'php.vim-for-php5'
