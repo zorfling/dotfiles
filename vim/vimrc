@@ -29,6 +29,7 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'rodjek/vim-puppet'
 Bundle 'estin/htmljinja'
 Bundle 'rails.vim'
+Bundle 'tpope/vim-haml'
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja
 
