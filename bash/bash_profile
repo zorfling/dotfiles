@@ -1,4 +1,5 @@
 source /etc/bash_completion.d/mercurial.sh
+source /etc/bash_completion.d/git-completion.sh
 
 hg_ps1() {
         #hg prompt " ({{branch}}{ r{rev}}{ <{bookmark}>}{ [{tags|quiet}]}{status|modified}{status|unknown}{update})" 2> /dev/null
