@@ -17,7 +17,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
 Bundle 'commentary.vim'
-Bundle 'delimitMate.vim'
 Bundle 'AutoTag'
 Bundle 'EasyMotion'
 
@@ -29,6 +28,7 @@ Bundle 'beyondwords/vim-twig'
 Bundle 'rodjek/vim-puppet'
 Bundle 'estin/htmljinja'
 Bundle 'rails.vim'
+Bundle 'tpope/vim-haml'
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja
 

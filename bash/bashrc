@@ -1,8 +1,10 @@
 # turn off Ctrl + s XOFF (XON is Ctrl + q)
-stty ixany
-stty ixoff -ixon
-stty stop undef
-stty start undef
+tty -s && stty ixany
+tty -s && stty ixoff -ixon
+tty -s && stty stop undef
+tty -s && stty start undef
+
+alias ll="ls -alrtF --color"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
