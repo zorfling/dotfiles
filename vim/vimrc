@@ -102,3 +102,5 @@ let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error && s:uname == "Linux"
     let g:NERDTreeDirArrows=0
 endif
+
+set number
