@@ -46,44 +46,19 @@ except:
 from mercurial import mail
 from urllib2 import AbstractBasicAuthHandler, AbstractDigestAuthHandler
 
-# mercurial.demandimport incompatibility workaround.
-# various keyring backends fail as they can't properly import helper
-# modules (as demandimport modifies python import behaviour).
-# If you get import errors with demandimport in backtrace, try
-# guessing what to block and extending the list below.
-from mercurial import demandimport
-for blocked_module in [
-    "gobject._gobject",
-    "configparser",
-    "json",
-    "abc",
-    "io",
-    "keyring",
-    "gdata.docs.service",
-    "gdata.service",
-    "types",
-    "atom.http",
-    "atom.http_interface",
-    "atom.service",
-    "atom.token_store",
-    "ctypes",
-    "secretstorage.exceptions",
-    "fs.opener",
-    ]:
-    if blocked_module not in demandimport.ignore:
-        demandimport.ignore.append(blocked_module)
+# mercurial.demandimport incompatibility workaround,
+# would cause gnomekeyring, one of the possible
+# keyring backends, not to work.
+from mercurial.demandimport import ignore
+if "gobject._gobject" not in ignore:
+    ignore.append("gobject._gobject")
+    ignore.append("configparser")
+    ignore.append("json")
+    ignore.append("abc")
+    ignore.append("io")
+    ignore.append("keyring")
 
-# Temporarily disable demandimport to make the need of extending
-# the list above less likely.
-if __import__ == demandimport._import:
-    demandimport.disable()
-    try:
-        import keyring
-    finally:
-        demandimport.enable()
-else:
-    import keyring
-
+import keyring
 from urlparse import urlparse
 import urllib2
 import smtplib, socket
