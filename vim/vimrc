@@ -31,6 +31,7 @@ Bundle 'estin/htmljinja'
 Bundle 'rails.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
+Bundle "mattn/emmet-vim"
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
@@ -101,7 +102,7 @@ set softtabstop=4
 set expandtab
 
 " Removes trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
