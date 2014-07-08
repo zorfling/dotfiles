@@ -32,6 +32,9 @@ Bundle 'rails.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'groenewege/vim-less'
 Bundle "mattn/emmet-vim"
+Bundle "editorconfig-vim"
+Bundle "buftabs"
+Bundle "vim-coffee-script"
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
