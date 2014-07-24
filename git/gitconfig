@@ -11,3 +11,4 @@ co = checkout
 ci = commit
 rb = rebase
 st = status
+glog = log --graph --all
