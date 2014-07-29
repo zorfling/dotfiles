@@ -35,6 +35,7 @@ Bundle "mattn/emmet-vim"
 Bundle "editorconfig-vim"
 Bundle "buftabs"
 Bundle "vim-coffee-script"
+Bundle "elzr/vim-json"
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
