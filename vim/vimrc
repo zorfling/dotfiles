@@ -35,11 +35,7 @@ Bundle "mattn/emmet-vim"
 Bundle "editorconfig-vim"
 Bundle "buftabs"
 Bundle "vim-coffee-script"
-<<<<<<< HEAD
-Bundle "elzr/vim-json"
-=======
 Bundle 'elzr/vim-json'
->>>>>>> Merge
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
