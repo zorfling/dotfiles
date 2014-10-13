@@ -3,6 +3,7 @@
 	email = zorfling@gmail.com
 [core]
 	quotepath = false
+    excludesfile = ~/.gitignore
 [color]
 	ui = true
 
@@ -11,4 +12,5 @@ co = checkout
 ci = commit
 rb = rebase
 st = status
-glog = log --graph --all
+glog = log --graph
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
