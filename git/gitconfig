@@ -8,9 +8,12 @@
 	ui = true
 
 [alias]
-co = checkout
-ci = commit
-rb = rebase
-st = status
-glog = log --graph
-lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    co = checkout
+    ci = commit
+    rb = rebase
+    st = status
+    glog = log --graph
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+
+[push]
+    default = simple
