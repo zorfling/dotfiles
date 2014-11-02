@@ -59,4 +59,5 @@ ss.schemes = http https
 groups = wdu
 
 [web]
-cacerts = /Users/zorfling/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/certified-1.0.0/certs/ca-bundle.crt
+cacerts = /usr/local/etc/openssl/cert.pem
+;cacerts = /Users/zorfling/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/gems/1.9.1/gems/certified-1.0.0/certs/ca-bundle.crt

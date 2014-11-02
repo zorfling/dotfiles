@@ -1,5 +1,7 @@
-source /etc/bash_completion.d/mercurial.sh
-source /etc/bash_completion.d/git-completion.sh
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 source ~/dotfiles/git/git-prompt.sh
 
 hg_ps1() {
@@ -22,7 +24,7 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Applications/Android Studio.app/sdk/platform-tools/
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:"~/android-sdk/platform-tools/"
 export AWS_CONFIG_FILE=~/.aws/config
 
 export PATH=$PATH:/Applications/acquia-drupal/drush
