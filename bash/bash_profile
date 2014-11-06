@@ -24,7 +24,7 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/android-sdk/platform-tools/:~/android-sdk/tools
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/android-sdk/platform-tools:~/android-sdk/tools
 export AWS_CONFIG_FILE=~/.aws/config
 export ANDROID_HOME="~/android-sdk/"
 
