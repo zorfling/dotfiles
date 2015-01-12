@@ -20,6 +20,7 @@ Bundle 'ervandew/supertab'
 Bundle 'commentary.vim'
 Bundle 'AutoTag'
 Bundle 'EasyMotion'
+Bundle 'ctrlp.vim'
 
 " Languages and frameworks
 Bundle 'php.vim-for-php5'
@@ -130,3 +131,18 @@ let g:buftabs_active_highlight_group="User1"
 let g:buftabs_only_basename=1
 set laststatus=2
 let g:buftabs_in_statusline=1
+
+" returns true iff is NERDTree open/active
+function! rc:isNTOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! rc:syncTree()
+  if &modifiable && rc:isNTOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+autocmd BufEnter * call rc:syncTree()
