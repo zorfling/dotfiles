@@ -14,6 +14,8 @@
     st = status
     glog = log --graph
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    in = !git fetch && git log HEAD..FETCH_HEAD
+    out = !git fetch && git log FETCH_HEAD..HEAD
 
 [push]
     default = simple
