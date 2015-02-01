@@ -20,6 +20,7 @@ Bundle 'ervandew/supertab'
 Bundle 'commentary.vim'
 Bundle 'AutoTag'
 Bundle 'EasyMotion'
+Bundle 'ctrlp.vim'
 
 " Languages and frameworks
 Bundle 'php.vim-for-php5'
@@ -35,7 +36,7 @@ Bundle "mattn/emmet-vim"
 Bundle "editorconfig-vim"
 Bundle "zefei/buftabs"
 Bundle "vim-coffee-script"
-Bundle 'elzr/vim-json'
+Bundle "elzr/vim-json"
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
