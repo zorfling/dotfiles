@@ -1,5 +1,5 @@
 source /etc/bash_completion.d/mercurial.sh
-source /etc/bash_completion.d/git
+source /etc/bash_completion.d/git-completion.sh
 source ~/dotfiles/git/git-prompt.sh
 
 hg_ps1() {
@@ -7,8 +7,8 @@ hg_ps1() {
         hg prompt " ({{branch}}{ <{bookmark}>}{ [{tags|quiet}]}{status|modified}{status|unknown}{update})" 2> /dev/null
 }
 
-#export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
-export PS1="[\d \t \u@\h \W] \$ "
+export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
+# export PS1="[\d \t \u@\h \W] \$ "
 
 export EDITOR=vim
 
