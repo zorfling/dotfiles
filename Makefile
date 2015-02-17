@@ -17,6 +17,8 @@ link:
 	cd ../ && ln -sf dotfiles/git/gitconfig .gitconfig
 	-cp -f ../.gitignore ../gitignore.bak
 	cd ../ && ln -sf dotfiles/git/gitignore .gitignore
+	-cp -f ../.screenrc ../screenrc.bak
+	cd ../ && ln -sf dotfiles/screen/screenrc .screenrc
 
 	git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 	vim +BundleInstall +qall
