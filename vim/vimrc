@@ -119,6 +119,10 @@ noremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+let g:ctrlp_custom_ignore = {
+    \ 'dir': 'app\/cache'
+    \ }
+
 let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error && s:uname == "Linux"
     let g:NERDTreeDirArrows=0
