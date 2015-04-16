@@ -83,8 +83,13 @@ endif
 
 set tags=./.tags;/
 
+" Open NERDTree if no file specified on open
 autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Quit all if last buffer is NERDTree (this was closing when destroying any open buffer
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Control W to close buffer
+nnoremap <C-w> :bd<CR>
 
 " My original stuff
 let g:solarized_termcolors=256
