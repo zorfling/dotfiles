@@ -89,7 +89,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Control W to close buffer
-nnoremap <C-w> :bd<CR>
+nnoremap <C-w> :bp<bar>sp<bar>bn<bar>bd<CR><CR>
 
 " My original stuff
 let g:solarized_termcolors=256
