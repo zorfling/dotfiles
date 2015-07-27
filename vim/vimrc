@@ -37,6 +37,8 @@ Bundle "editorconfig-vim"
 Bundle "zefei/buftabs"
 Bundle "vim-coffee-script"
 Bundle "elzr/vim-json"
+Bundle "tpope/vim-surround"
+Bundle "tpope/vim-repeat"
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
