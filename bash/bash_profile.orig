@@ -28,13 +28,20 @@ export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/a
 export AWS_CONFIG_FILE=~/.aws/config
 export ANDROID_HOME="~/android-sdk/"
 
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 
 alias hibernateon="sudo pmset -a hibernatemode 25"
 alias hibernateoff="sudo pmset -a hibernatemode 3"
 alias rmun="find . -name "*.un~" -delete"
 alias ll="ls -alFG"
+<<<<<<< HEAD
+=======
+export PATH=/usr/local/sbin:$PATH
 export HISTSIZE=100000
 export HISTFILESIZE=100000
+>>>>>>> 84cbe10... Up history filesize
+
 alias oa="/opt/apps/ola/local/php/app/console ola:application"
 alias oap="/opt/apps/ola/local/php/app/console ola:applicant"
 alias om="/opt/apps/ola/local/php/app/console ola:maintenance"
@@ -48,6 +55,9 @@ alias grep='grep --color=always'
 
 set -o vi
 
+export PATH=/usr/local/sbin:$PATH
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
