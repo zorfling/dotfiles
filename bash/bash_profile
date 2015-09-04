@@ -42,6 +42,8 @@ alias hibernateoff="sudo pmset -a hibernatemode 3"
 alias rmun="find . -name "*.un~" -delete"
 alias ll="ls -alFG"
 export PATH=/usr/local/sbin:$PATH
+export HISTSIZE=100000
+export HISTFILESIZE=100000
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
