@@ -28,15 +28,9 @@ export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/a
 export AWS_CONFIG_FILE=~/.aws/config
 export ANDROID_HOME="~/android-sdk/"
 
-export PATH=$PATH:/Applications/acquia-drupal/drush
-
 export HISTSIZE=100000
 export HISTFILESIZE=100000
 
-function drin() {
- drush dl $1 && drush en $1 -y
-}
-alias drin=drin
 alias hibernateon="sudo pmset -a hibernatemode 25"
 alias hibernateoff="sudo pmset -a hibernatemode 3"
 alias rmun="find . -name "*.un~" -delete"
