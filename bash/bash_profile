@@ -25,15 +25,10 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/android-sdk/platform-tools:~/dotfiles/git/
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/android-sdk/platform-tools:~/dotfiles/git/:/opt/rubies/bin/
+
 export AWS_CONFIG_FILE=~/.aws/config
 
-export PATH=$PATH:/Applications/acquia-drupal/drush
-
-function drin() {
- drush dl $1 && drush en $1 -y
-}
-alias drin=drin
 alias hibernateon="sudo pmset -a hibernatemode 25"
 alias hibernateoff="sudo pmset -a hibernatemode 3"
 alias rmun="find . -name "*.un~" -delete"
