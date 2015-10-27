@@ -53,6 +53,8 @@ alias gola="cd ~ola/local/php"
 
 alias grep='grep --color=always'
 
+set -o vi
+
 export PATH=/usr/local/sbin:$PATH
 export HISTSIZE=100000
 export HISTFILESIZE=100000
