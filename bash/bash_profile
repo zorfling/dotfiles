@@ -1,5 +1,6 @@
 source /etc/bash_completion.d/mercurial.sh
 source /etc/bash_completion.d/git-completion.sh
+source /opt/ss-arcanist/arcanist/resources/shell/bash-completion
 source ~/dotfiles/git/git-prompt.sh
 
 hg_ps1() {
