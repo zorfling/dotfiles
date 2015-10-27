@@ -33,6 +33,15 @@ alias hibernateon="sudo pmset -a hibernatemode 25"
 alias hibernateoff="sudo pmset -a hibernatemode 3"
 alias rmun="find . -name "*.un~" -delete"
 alias ll="ls -alFG"
+alias oa="/opt/apps/ola/local/php/app/console ola:application"
+alias oap="/opt/apps/ola/local/php/app/console ola:applicant"
+alias om="/opt/apps/ola/local/php/app/console ola:maintenance"
+alias os="/opt/apps/ola/local/php/app/console ola:sinet"
+alias osql="/opt/apps/ola/local/php/app/console ola:db"
+alias ac="/opt/apps/ola/local/php/app/console"
+alias ver="aws elasticbeanstalk describe-environments --environment-names ola-test-env ola-training-env ola-staging-env ola-prod-env"
+alias gola="cd ~ola/local/php"
+
 export PATH=/usr/local/sbin:$PATH
 export HISTSIZE=100000
 export HISTFILESIZE=100000
