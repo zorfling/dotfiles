@@ -45,6 +45,7 @@ alias ver="aws elasticbeanstalk describe-environments --environment-names ola-te
 alias gola="cd ~ola/local/php"
 
 alias grep='grep --color=always'
+alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args'
 
 set -o vi
 
