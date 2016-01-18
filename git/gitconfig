@@ -19,3 +19,9 @@
 
 [push]
     default = simple
+[credential]
+	helper = cache
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+    prompt = false
