@@ -61,7 +61,7 @@ map ] :bnext<CR>
 autocmd FileType nerdtree noremap <buffer> [ <nop>
 autocmd FileType nerdtree noremap <buffer> ] <nop>
 
-map = :NERDTreeToggle<CR>
+map + :NERDTreeToggle<CR>
 map - :hide<CR>
 
 nmap <bar> :vsplit<cr>
