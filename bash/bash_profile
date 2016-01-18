@@ -38,10 +38,10 @@ alias oap="/opt/apps/ola/local/php/app/console ola:applicant"
 alias om="/opt/apps/ola/local/php/app/console ola:maintenance"
 alias os="/opt/apps/ola/local/php/app/console ola:sinet"
 alias osql="/opt/apps/ola/local/php/app/console ola:db"
+alias och="/opt/apps/ola/local/php/app/console ola:changelog"
 alias ac="/opt/apps/ola/local/php/app/console"
 alias ver="aws elasticbeanstalk describe-environments --environment-names ola-test-env ola-training-env ola-staging-env ola-prod-env"
 alias gola="cd ~ola/local/php"
-
 alias grep='grep --color=always'
 
 set -o vi
