@@ -24,7 +24,7 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/android-sdk/platform-tools:~/android-sdk/tools
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/android-sdk/platform-tools:~/android-sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/
 export AWS_CONFIG_FILE=~/.aws/config
 export ANDROID_HOME="~/android-sdk/"
 
@@ -53,3 +53,6 @@ set -o vi
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export GOPATH=~/Code/go/
+export GOBIN=~/Code/go/bin/
