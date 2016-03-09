@@ -160,6 +160,8 @@ endfunction
 
 autocmd BufEnter * call rc:syncTree()
 
+set hlsearch
+
 function! DoPrettyXML()
   " save the filetype so we can restore it later
   let l:origft = &ft
