@@ -1,5 +1,5 @@
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+    . $(brew --prefix)/etc/bash_completion
 fi
 
 source ~/dotfiles/git/git-prompt.sh
@@ -27,6 +27,7 @@ wtitle PuTTY
 export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/android-sdk/platform-tools:~/android-sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/
 export AWS_CONFIG_FILE=~/.aws/config
 export ANDROID_HOME="~/android-sdk/"
+export HOMEBREW_GITHUB_API_TOKEN="c34d0ac6daa8bfc458a759a96ab77ba97dce93fa"
 
 
 alias hibernateon="sudo pmset -a hibernatemode 25"
