@@ -83,3 +83,7 @@ fi
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 PATH="/usr/local/heroku/bin:$PATH"
+export GOPATH=~/Code/go/
+export GOBIN=~/Code/go/bin/
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
