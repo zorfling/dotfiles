@@ -17,3 +17,4 @@ export NVM_DIR="/Users/zorfling/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 set -o vi
+complete -C aws_completer aws
