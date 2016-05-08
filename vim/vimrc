@@ -21,6 +21,7 @@ Bundle 'commentary.vim'
 Bundle 'AutoTag'
 Bundle 'EasyMotion'
 Bundle 'ctrlp.vim'
+Plugin 'ryanoasis/vim-devicons'
 
 " Languages and frameworks
 Bundle 'php.vim-for-php5'
