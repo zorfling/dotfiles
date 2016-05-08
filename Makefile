@@ -21,4 +21,4 @@ link:
 	cd ../ && ln -sf dotfiles/screen/screenrc .screenrc
 
 	git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	vim +BundleInstall +qall
+	vim +PluginInstall +qall
