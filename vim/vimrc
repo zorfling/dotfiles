@@ -22,6 +22,8 @@ Plugin 'AutoTag'
 Plugin 'EasyMotion'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Languages and frameworks
 Plugin 'php.vim-for-php5'
@@ -35,7 +37,7 @@ Plugin 'tpope/vim-haml'
 Plugin 'groenewege/vim-less'
 Plugin 'mattn/emmet-vim'
 Plugin 'editorconfig-vim'
-Plugin 'zefei/buftabs'
+"Plugin 'zefei/buftabs'
 Plugin 'vim-coffee-script'
 Plugin 'elzr/vim-json'
 Plugin 'tpope/vim-surround'
@@ -198,3 +200,4 @@ endif
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 set encoding=utf-8
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
