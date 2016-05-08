@@ -19,4 +19,4 @@ link:
 	cd ../ && ln -sf dotfiles/git/gitignore .gitignore
 
 	git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	vim +BundleInstall +qall
+	vim +PluginInstall +qall
