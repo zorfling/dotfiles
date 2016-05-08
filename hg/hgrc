@@ -24,9 +24,8 @@ patchbomb =
 convert =
 record =
 
-hgshelve=~/dotfiles/hg/hgshelve/hgshelve.py
-mercurial_keyring=~/dotfiles/hg/mercurial_keyring/mercurial_keyring.py
-prompt=~/dotfiles/hg/hg-prompt/prompt.py
+shelve=
+#mercurial_keyring=~/dotfiles/hg/mercurial_keyring/mercurial_keyring.py
 
 transplant=
 [pager]
