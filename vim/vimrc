@@ -204,4 +204,9 @@ endif
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
 set encoding=utf-8
 let g:airline_powerline_fonts=1
+let g:airline#themes#solarized#palette = {}
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_format = '%s-'
+let g:airline#extensions#tabline#fnamecollapse = 1
