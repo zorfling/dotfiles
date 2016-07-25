@@ -49,8 +49,9 @@ alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args'
 set -o vi
 
 export PATH=/usr/local/sbin:$PATH
-export HISTSIZE=100000
-export HISTFILESIZE=100000
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export HISTTIMEFORMAT="%y-%m-%d %T "
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
