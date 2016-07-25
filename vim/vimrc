@@ -138,16 +138,16 @@ let g:ctrlp_custom_ignore = {
 
 let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error && s:uname == "Linux"
-    let g:NERDTreeDirArrows=0
+    " let g:NERDTreeDirArrows=0
 endif
 
 set number
 
-hi User1 ctermbg=yellow ctermfg=black guibg=yellow guifg=black
-let g:buftabs_active_highlight_group="User1"
-let g:buftabs_only_basename=1
-set laststatus=2
-let g:buftabs_in_statusline=1
+" hi User1 ctermbg=yellow ctermfg=black guibg=yellow guifg=black
+" let g:buftabs_active_highlight_group="User1"
+" let g:buftabs_only_basename=1
+" set laststatus=2
+" let g:buftabs_in_statusline=1
 
 " returns true iff is NERDTree open/active
 function! rc:isNTOpen()
@@ -212,3 +212,5 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s-'
 let g:airline#extensions#tabline#fnamecollapse = 1
+let g:webdevicons_enable_airline_tabline = 0
+let g:airline#extensions#whitespace#enabled = 1
