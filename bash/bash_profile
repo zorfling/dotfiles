@@ -43,6 +43,7 @@ alias ac="/opt/apps/ola/local/php/app/console"
 alias ver="aws elasticbeanstalk describe-environments --environment-names ola-test-env ola-training-env ola-staging-env ola-prod-env"
 alias gola="cd ~ola/local/php"
 alias grep='grep --color=always'
+alias grepnc='grep --color=never'
 alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args'
 
 set -o vi
