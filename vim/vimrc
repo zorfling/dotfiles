@@ -7,35 +7,43 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 " My Bundles here:
 "
 " original repos on github
-Bundle 'tpope/vim-sensible'
-Bundle 'scrooloose/nerdtree'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'peaksea'
-Bundle 'ervandew/supertab'
-Bundle 'commentary.vim'
-Bundle 'AutoTag'
-Bundle 'EasyMotion'
+Plugin 'tpope/vim-sensible'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'peaksea'
+Plugin 'ervandew/supertab'
+Plugin 'commentary.vim'
+Plugin 'AutoTag'
+Plugin 'EasyMotion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'keepcase.vim'
 
 " Languages and frameworks
-Bundle 'php.vim-for-php5'
-Bundle 'html5.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'beyondwords/vim-twig'
-Bundle 'rodjek/vim-puppet'
-Bundle 'estin/htmljinja'
-Bundle 'rails.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'groenewege/vim-less'
-Bundle "mattn/emmet-vim"
-Bundle "editorconfig-vim"
-Bundle "zefei/buftabs"
-Bundle "vim-coffee-script"
-Bundle "elzr/vim-json"
+Plugin 'php.vim-for-php5'
+Plugin 'html5.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'beyondwords/vim-twig'
+Plugin 'rodjek/vim-puppet'
+Plugin 'estin/htmljinja'
+Plugin 'rails.vim'
+Plugin 'tpope/vim-haml'
+Plugin 'groenewege/vim-less'
+Plugin 'mattn/emmet-vim'
+Plugin 'editorconfig-vim'
+"Plugin 'zefei/buftabs'
+Plugin 'vim-coffee-script'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'ekalinin/Dockerfile.vim'
 
 au BufRead,BufNewFile *.twig set filetype=htmljinja.html
 
@@ -43,13 +51,13 @@ syntax on
 filetype plugin indent on     " required!
 
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 
 map [ :bprev<CR>
 map ] :bnext<CR>
@@ -57,13 +65,13 @@ map ] :bnext<CR>
 autocmd FileType nerdtree noremap <buffer> [ <nop>
 autocmd FileType nerdtree noremap <buffer> ] <nop>
 
-map = :NERDTreeToggle<CR>
+map + :NERDTreeToggle<CR>
 map - :hide<CR>
 
 nmap <bar> :vsplit<cr>
 nmap _ :split<cr>
 
-nmap <Tab> <C-W>
+nnoremap <Tab> <C-W>
 
 " Moving lines up and down http://vim.wikia.com/wiki/Moving_lines_up_or_down
 nnoremap <A-j> :m .+1<CR>==
@@ -82,8 +90,13 @@ endif
 
 set tags=./.tags;/
 
+" Open NERDTree if no file specified on open
 autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Quit all if last buffer is NERDTree (this was closing when destroying any open buffer
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" Control W to close buffer
+nnoremap <C-w> :bp<bar>sp<bar>bn<bar>bd<CR><CR>
 
 " My original stuff
 let g:solarized_termcolors=256
@@ -111,22 +124,93 @@ set expandtab
 " Removes trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
-autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
+autocmd FileType ruby setlocal ts=2 sw=2 expandtab
+autocmd FileType yaml setlocal ts=2 sw=2 expandtab
+autocmd FileType make setlocal ts=4 sts=0 sw=4 noexpandtab
 
 noremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
+let g:ctrlp_custom_ignore = {
+    \ 'dir': 'app\/cache'
+    \ }
+
 let s:uname = system("echo -n \"$(uname)\"")
 if !v:shell_error && s:uname == "Linux"
-    let g:NERDTreeDirArrows=0
+    " let g:NERDTreeDirArrows=0
 endif
 
 set number
 
-hi User1 ctermbg=yellow ctermfg=black guibg=yellow guifg=black
-let g:buftabs_active_highlight_group="User1"
-let g:buftabs_only_basename=1
-set laststatus=2
-let g:buftabs_in_statusline=1
+" hi User1 ctermbg=yellow ctermfg=black guibg=yellow guifg=black
+" let g:buftabs_active_highlight_group="User1"
+" let g:buftabs_only_basename=1
+" set laststatus=2
+" let g:buftabs_in_statusline=1
+
+" returns true iff is NERDTree open/active
+function! rc:isNTOpen()
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
+endfunction
+
+" calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
+function! rc:syncTree()
+  if &modifiable && rc:isNTOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
+
+autocmd BufEnter * call rc:syncTree()
+
+set hlsearch
+
+function! DoPrettyXML()
+  " save the filetype so we can restore it later
+  let l:origft = &ft
+  set ft=
+  " delete the xml header if it exists. This will
+  " permit us to surround the document with fake tags
+  " without creating invalid xml.
+  1s/<?xml .*?>//e
+  " insert fake tags around the entire document.
+  " This will permit us to pretty-format excerpts of
+  " XML that may contain multiple top-level elements.
+  0put ='<PrettyXML>'
+  $put ='</PrettyXML>'
+  silent %!xmllint --format -
+  " xmllint will insert an <?xml?> header. it's easy enough to delete
+  " if you don't want it.
+  " delete the fake tags
+  2d
+  $d
+  " restore the 'normal' indentation, which is one extra level
+  " too deep due to the extra tags we wrapped around the document.
+  silent %<
+  " back to home
+  1
+  " restore the filetype
+  exe "set ft=" . l:origft
+endfunction
+command! PrettyXML call DoPrettyXML()
+
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+set colorcolumn=120
+
+" See https://github.com/ryanoasis/vim-devicons
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete\ 12
+set encoding=utf-8
+let g:airline_powerline_fonts=1
+let g:airline#themes#solarized#palette = {}
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_format = '%s-'
+let g:airline#extensions#tabline#fnamecollapse = 1
+let g:webdevicons_enable_airline_tabline = 0
+let g:airline#extensions#whitespace#enabled = 1

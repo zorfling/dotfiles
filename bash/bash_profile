@@ -1,14 +1,17 @@
 source /etc/bash_completion.d/mercurial.sh
 source /etc/bash_completion.d/git-completion.sh
+source /opt/ss-arcanist/arcanist/resources/shell/bash-completion
 source ~/dotfiles/git/git-prompt.sh
+
+stty -ixon
 
 hg_ps1() {
         #hg prompt " ({{branch}}{ r{rev}}{ <{bookmark}>}{ [{tags|quiet}]}{status|modified}{status|unknown}{update})" 2> /dev/null
         hg prompt " ({{branch}}{ <{bookmark}>}{ [{tags|quiet}]}{status|modified}{status|unknown}{update})" 2> /dev/null
 }
 
-#export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
-export PS1="[\d \t \u@\h \W] \$ "
+export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
+# export PS1="[\d \t \u@\h \W] \$ "
 
 export EDITOR=vim
 
@@ -22,21 +25,67 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/android-sdk/platform-tools
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/android-sdk/platform-tools:~/dotfiles/git/:/opt/rubies/bin/:/opt/rh/maven30/root/usr/bin
+
 export AWS_CONFIG_FILE=~/.aws/config
 
-export PATH=$PATH:/Applications/acquia-drupal/drush
-
-function drin() {
- drush dl $1 && drush en $1 -y
-}
-alias drin=drin
 alias hibernateon="sudo pmset -a hibernatemode 25"
 alias hibernateoff="sudo pmset -a hibernatemode 3"
 alias rmun="find . -name "*.un~" -delete"
 alias ll="ls -alFG"
+alias oa="/opt/apps/ola/local/php/app/console ola:application"
+alias oap="/opt/apps/ola/local/php/app/console ola:applicant"
+alias om="/opt/apps/ola/local/php/app/console ola:maintenance"
+alias os="/opt/apps/ola/local/php/app/console ola:sinet"
+alias osql="/opt/apps/ola/local/php/app/console ola:db"
+alias och="/opt/apps/ola/local/php/app/console ola:changelog"
+alias ac="/opt/apps/ola/local/php/app/console"
+alias ver="aws elasticbeanstalk describe-environments --environment-names ola-test-env ola-training-env ola-staging-env ola-prod-env"
+alias gola="cd ~ola/local/php"
+alias grep='grep --color=always'
+alias grepnc='grep --color=never'
+alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args'
+
+set -o vi
+
 export PATH=/usr/local/sbin:$PATH
+export HISTSIZE=1000000
+export HISTFILESIZE=1000000
+export HISTTIMEFORMAT="%y-%m-%d %T "
 
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh # This loads NVM
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+SSH_ENV="$HOME/.ssh/environment"
+
+function start_agent {
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add ~/.ssh/id_rsa
+    /usr/bin/ssh-add ~/.ssh/cid_rsa
+    /usr/bin/ssh-add ~/.ssh/its-ss-ola-ec2-prod-kp
+    /usr/bin/ssh-add ~/.ssh/its-ss-ola.pem
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cygwin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+PATH="/usr/local/heroku/bin:$PATH"
+export GOPATH=~/Code/go/
+export GOBIN=~/Code/go/bin/
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
