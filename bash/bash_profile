@@ -1,6 +1,8 @@
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi
+source /usr/local/etc/bash_completion.d/git-completion.bash
+complete -C aws_completer aws
 
 source ~/dotfiles/git/git-prompt.sh
 
@@ -24,9 +26,9 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:~/android-sdk/platform-tools:~/android-sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/Library/Android/sdk/platform-tools:/Users/zorfling/Library/Android/sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/
 export AWS_CONFIG_FILE=~/.aws/config
-export ANDROID_HOME="~/android-sdk/"
+export ANDROID_HOME="/Users/zorfling/Library/Android/sdk"
 export HOMEBREW_GITHUB_API_TOKEN="c34d0ac6daa8bfc458a759a96ab77ba97dce93fa"
 
 
