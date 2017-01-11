@@ -28,7 +28,7 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/android-sdk/platform-tools:~/dotfiles/git/:/opt/rubies/bin/:/opt/rh/maven30/root/usr/bin
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/android-sdk/platform-tools:~/dotfiles/git/:/opt/rubies/bin/:/opt/rh/maven30/root/usr/bin:/opt/rg
 
 export AWS_CONFIG_FILE=~/.aws/config
 
