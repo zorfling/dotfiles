@@ -195,6 +195,8 @@ function! DoPrettyXML()
   exe "set ft=" . l:origft
 endfunction
 command! PrettyXML call DoPrettyXML()
+command! Wq wq
+command! Wqa wqa
 
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 if executable('ag')
