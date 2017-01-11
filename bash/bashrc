@@ -5,6 +5,7 @@ tty -s && stty stop undef
 tty -s && stty start undef
 
 alias ll="ls -alrtF --color"
+alias rg="rg -S"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

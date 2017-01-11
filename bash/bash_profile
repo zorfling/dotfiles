@@ -50,6 +50,7 @@ alias gola="cd ~ola/local/php"
 alias grep='grep --color=always'
 alias grepnc='grep --color=never'
 alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args'
+alias rg='rg -S'
 
 set -o vi
 
