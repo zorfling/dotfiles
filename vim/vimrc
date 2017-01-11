@@ -124,6 +124,7 @@ set expandtab
 " Removes trailing whitespace
 autocmd BufWritePre * :%s/\s\+$//e
 
+" note these may be overridden by editorconfig
 autocmd FileType ruby setlocal ts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sw=2 expandtab
 autocmd FileType make setlocal ts=4 sts=0 sw=4 noexpandtab
