@@ -13,8 +13,8 @@ hg_ps1() {
 alias gola="cd ~olasdashboard/ola-backend/"
 alias psaux="ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args"
 
-# export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
-export PS1="[\d \t \u@\h \W]\$ "
+export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
+# export PS1="[\d \t \u@\h \W]\$ "
 
 export EDITOR=vim
 
