@@ -17,4 +17,10 @@ hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
 # default tabs
 screen -t vim
 screen -t cli
-
+screen -t logs
+screen -t cp1
+screen -t cp2
+screen -t cd4
+screen -t cd5
+screen -t cp4
+screen -t cp5
