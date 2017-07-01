@@ -11,8 +11,9 @@ hg_ps1() {
         hg prompt " ({{branch}}{ <{bookmark}>}{ [{tags|quiet}]}{status|modified}{status|unknown}{update})" 2> /dev/null
 }
 
-#export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
-export PS1="[\d \t \u@\h \W] \$ "
+# export PS1="[\d \t \u@\h \W]\$(hg_ps1)\$(__git_ps1) \$ "
+export PS1="[\d \t \u@\h \W]\$(__git_ps1) \$ "
+# export PS1="[\d \t \u@\h \W] \$ "
 
 export EDITOR=vim
 
@@ -27,6 +28,8 @@ function wtitle {
 
 wtitle PuTTY
 export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/Library/Android/sdk/platform-tools:/Users/zorfling/Library/Android/sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/
+export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+export PATH="$PATH:`yarn global bin`"
 export AWS_CONFIG_FILE=~/.aws/config
 export ANDROID_HOME="/Users/zorfling/Library/Android/sdk"
 export HOMEBREW_GITHUB_API_TOKEN="c34d0ac6daa8bfc458a759a96ab77ba97dce93fa"
@@ -49,6 +52,10 @@ alias gola="cd ~ola/local/php"
 
 alias grep='grep --color=always'
 alias psaux='ps axo user:20,pid,pcpu,pmem,vsz,rss,tty,stat,start,time,comm,args'
+alias rg="rg -S"
+alias dc="docker-compose"
+
+alias fixcamera="sudo killall AppleCameraAssistant;sudo killall VDCAssistant"
 
 set -o vi
 
