@@ -4,6 +4,7 @@
 [core]
 	quotepath = false
     excludesfile = ~/.gitignore
+	editor = /usr/bin/vim
 
 [alias]
     co = checkout
