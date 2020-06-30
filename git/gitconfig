@@ -17,7 +17,7 @@
     out = !git fetch && git log FETCH_HEAD..HEAD
 
 [push]
-    default = simple
+    default = current
 [credential]
 	helper = cache
 [merge]
@@ -45,3 +45,10 @@
     added = yellow
     changed = green
     untracked = cyan
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
