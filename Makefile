@@ -4,6 +4,8 @@ SHELL = /bin/sh
 
 link:
 	-cp -f ../.bashrc ../bashrc.bak
+	cd ../ && ln -sf dotfiles/zsh/zshrc .zshrc
+	-cp -f ../.zshrc ../zshrc.bak
 	cd ../ && ln -sf dotfiles/bash/bashrc .bashrc
 	-cp -f ../.bash_profile ../bash_profile.bak
 	cd ../ && ln -sf dotfiles/bash/bash_profile .bash_profile
