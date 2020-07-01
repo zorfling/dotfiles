@@ -114,7 +114,11 @@ else
     colorscheme solarized
 endif
 
-set diffopt+=iwhite
+if &diff
+    set diffopt-=internal
+    set diffopt+=iwhite
+endif
+
 
 set autoindent
 set smartindent
