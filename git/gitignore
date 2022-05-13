@@ -43,3 +43,9 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+.pytest_cache
+backend/modules/websocket/signalling/
+todo.md
+.nvmrc
+frontend/apps/e2e/src/support/credentials/
+wallaby.js

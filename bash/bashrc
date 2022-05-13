@@ -18,3 +18,5 @@ export NVM_DIR="/Users/zorfling/.nvm"
 
 set -o vi
 complete -C aws_completer aws
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. "$HOME/.cargo/env"
