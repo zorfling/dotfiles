@@ -27,7 +27,7 @@ function wtitle {
 }
 
 wtitle PuTTY
-export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/Library/Android/sdk/platform-tools:/Users/zorfling/Library/Android/sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/
+export PATH=/usr/local/bin:$PATH:/opt/ss-arcanist/arcanist/bin:/opt/node/bin:/Users/zorfling/Library/Android/sdk/platform-tools:/Users/zorfling/Library/Android/sdk/tools:~/Code/go/bin:~/.composer/vendor/bin/:/Users/chriscolborne/.config/DevTool/CurrentVersion
 export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 export PATH="$PATH:`yarn global bin`"
 export AWS_CONFIG_FILE=~/.aws/config
